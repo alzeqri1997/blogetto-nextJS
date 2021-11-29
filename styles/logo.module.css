@@ -1,0 +1,9 @@
+.logo {
+  font-size: 24px;
+  font-weight: lighter;
+}
+.logo span {
+  font-size: 1.6em;
+  font-style: oblique;
+  font-weight: bold;
+}
