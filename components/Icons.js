@@ -1,10 +1,8 @@
-import { SvgIcon, ButtonBase } from '@mui/material'
+import { SvgIcon } from '@mui/material'
 
 // Icon Button Wrapper
 const IconButton = ({ children }) => (
-  <ButtonBase LinkComponent="a" centerRipple={true}>
-    <SvgIcon viewBox="0 0 512 512">{children}</SvgIcon>
-  </ButtonBase>
+  <SvgIcon viewBox="0 0 512 512">{children}</SvgIcon>
 )
 
 // Components of Icons
