@@ -1,15 +1,16 @@
-export function getTags(arr) {
+export function getTags(array) {
   console.log('this is called')
-  const sortedArr = []
-  arr.forEach((tag) => {
-    if (!sortedArr.includes(Object.values(tag)[0])) {
-      const names = Object.values(tag)[0]
-      sortedArr.push(names)
+
+  const sortedArray = []
+  array.forEach((tag) => {
+    if (!sortedArray.includes(Object.values(tag)[1])) {
+      const names = Object.values(tag)[1]
+      sortedArray.push(names)
     }
   })
 
-  const sortedArrWithCounter = sortedArr.map((selectedTag) => {
-    const counter = arr.reduce((counter, tag) => {
+  const sortedArrayWithCounter = sortedArray.map((selectedTag) => {
+    const counter = array.reduce((counter, tag) => {
       if (tag.tag.toLowerCase() === selectedTag.toLowerCase()) {
         counter++
       }
@@ -20,5 +21,5 @@ export function getTags(arr) {
     return { name: selectedTag, counter: counter }
   })
   console.log('till here')
-  return sortedArrWithCounter
+  return sortedArrayWithCounter
 }
