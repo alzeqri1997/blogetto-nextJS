@@ -1,13 +1,12 @@
 import Link from 'next/link'
 import { Typography, Container, Grid, Card, CardContent } from '@mui/material'
 import Tags from './Tags'
-import { tags } from '../data'
 
-export default function Posts() {
+export default function Posts({ post }) {
   return (
     <Grid sx={{ borderTop: '1px solid #333', pt: 5, mt: 3 }} container>
       <Grid item xs={12} md={3}>
-        August 7, 2021
+        {post.createdAt}
       </Grid>
       <Grid item xs={12} md={9}>
         <Container disableGutters={true} component="div" maxWidth={false}>
@@ -22,23 +21,23 @@ export default function Posts() {
               >
                 <CardContent sx={{ p: 0 }}>
                   <Typography component="h2" variant="h5">
-                    New features in v1
+                    {post.title}
                   </Typography>
                   <Typography
                     sx={{ display: 'flex' }}
                     variant="subtitle1"
                     color="text.secondary"
                   >
-                    {tags.map((tag, index) => (
+                    {post.tags.map((tag, index) => (
                       <Tags key={index} tag={tag.tag} link={tag.link} />
                     ))}
                   </Typography>
                   <Typography variant="subtitle1" paragraph>
-                    An overview of the new features released in v1 - code block
-                    copy, multiple authors, frontmatter layout and more
+                    {post.description.split(' ').splice(0, 11).join(' ') +
+                      '...'}
                   </Typography>
                   <Typography variant="subtitle1" color="primary">
-                    <Link href="/">Read More</Link>
+                    <Link href={`/blogs/${post.id.toString()}`}>Read More</Link>
                   </Typography>
                 </CardContent>
               </Card>

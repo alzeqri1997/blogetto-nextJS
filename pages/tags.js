@@ -1,11 +1,9 @@
-import React, { useMemo, useCallback, useState } from 'react'
 import { Grid, Typography, Box, Link as MuiLink } from '@mui/material'
 import Link from 'next/link'
-import { tags2 } from '../data'
 import { getTags } from '../utils/getTags'
 
-export default function Tags() {
-  const allTags = getTags(tags2)
+export default function Tags({ tags }) {
+  const allTags = getTags(tags)
 
   return (
     <Grid
@@ -28,7 +26,7 @@ export default function Tags() {
           {allTags.map((tag, index) => {
             return (
               <div key={index} style={{ marginLeft: '1.25rem' }}>
-                <Link href={`/tags/${tag.name}`} passHref>
+                <Link href={`/api/tags/${tag.name}`} passHref>
                   <MuiLink
                     sx={{ fontWeight: 'light', mr: '.5rem' }}
                     underline="none"
@@ -48,4 +46,21 @@ export default function Tags() {
       </Grid>
     </Grid>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3000/api/blogs')
+  const { blogs } = await res.json()
+
+  const tags = []
+
+  blogs.forEach((blog) => {
+    blog.tags.forEach((tag) => {
+      tags.push(tag)
+    })
+  })
+
+  return {
+    props: { tags },
+  }
 }

@@ -1,7 +1,15 @@
-import { Typography, Box, TextField } from '@mui/material'
-import { GitHub, Github } from './Icons'
+import { Typography, TextField } from '@mui/material'
 
-export default function Title({ isBlog = false }) {
+export default function Title({
+  title = 'Latest',
+  description = 'A blog created with Next.js and Tailwind.css',
+  isBlog = false,
+  setSearchValue,
+}) {
+  const handleChange = (e) => {
+    e.preventDefault()
+    setSearchValue(e.target.value.toLowerCase())
+  }
   return (
     <>
       <Typography
@@ -10,7 +18,7 @@ export default function Title({ isBlog = false }) {
         component="h1"
         gutterBottom
       >
-        Latest
+        {title}
       </Typography>
       {!isBlog && (
         <Typography
@@ -19,7 +27,7 @@ export default function Title({ isBlog = false }) {
           component="p"
           gutterBottom
         >
-          A blog created with Next.js and Tailwind.css
+          {description}
         </Typography>
       )}
 
@@ -29,6 +37,7 @@ export default function Title({ isBlog = false }) {
           id="input-with-sx"
           label="Search Articles"
           variant="outlined"
+          onChange={(e) => handleChange(e)}
         />
       )}
     </>
