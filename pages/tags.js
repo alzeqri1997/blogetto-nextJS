@@ -26,7 +26,7 @@ export default function Tags({ tags }) {
           {allTags.map((tag, index) => {
             return (
               <div key={index} style={{ marginLeft: '1.25rem' }}>
-                <Link href={`/api/tags/${tag.name}`} passHref>
+                <Link href={`/tag/${tag.name.toLowerCase()}`} passHref>
                   <MuiLink
                     sx={{ fontWeight: 'light', mr: '.5rem' }}
                     underline="none"
