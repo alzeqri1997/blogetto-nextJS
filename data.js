@@ -1,7 +1,7 @@
 export const tags = [
   { id: 1, tag: 'nextJs', link: '/nextjs' },
   { id: 2, tag: 'Tailwind', link: '/tailwind' },
-  { id: 3, tag: 'guid', link: '/guid' },
+  { id: 3, tag: 'guide', link: '/guide' },
   { id: 4, tag: 'multi-author', link: '/multi-author' },
   { id: 5, tag: 'feature', link: '/feature' },
   { id: 6, tag: 'math', link: '/math' },
@@ -16,7 +16,7 @@ export const blogs = [
     tags: [
       { id: 1, tag: 'nextJs', link: '/nextjs' },
       { id: 2, tag: 'Tailwind', link: '/tailwind' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
     ],
     createdAt: '2021-11-16',
     description:
@@ -28,7 +28,7 @@ export const blogs = [
     tags: [
       { id: 1, tag: 'nextJs', link: '/nextjs' },
       { id: 2, tag: 'Tailwind', link: '/tailwind' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
     ],
     createdAt: '2021-10-15',
     description:
@@ -40,7 +40,7 @@ export const blogs = [
     tags: [
       { id: 1, tag: 'nextJs', link: '/nextjs' },
       { id: 2, tag: 'Tailwind', link: '/tailwind' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
     ],
     createdAt: '2021-9-10',
     description:
@@ -51,7 +51,7 @@ export const blogs = [
     title: 'Images in Next.js',
     tags: [
       { id: 1, tag: 'nextJs', link: '/nextjs' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
     ],
     createdAt: '2021-8-10',
     description:
@@ -71,9 +71,9 @@ export const blogs = [
   },
   {
     id: 6,
-    title: 'Markdown Guide',
+    title: 'Markdown guidee',
     tags: [
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
       { id: 8, tag: 'github', link: '/github' },
     ],
     createdAt: '2021-6-10',
@@ -84,7 +84,7 @@ export const blogs = [
     id: 7,
     title: 'The Time Machine',
     tags: [
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
       { id: 5, tag: 'feature', link: '/feature' },
     ],
     createdAt: '2021-5-10',
@@ -104,7 +104,7 @@ export const blogs = [
     title: 'simple way to create REST api',
     tags: [
       { id: 5, tag: 'feature', link: '/feature' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
     ],
     createdAt: '2021-3-10',
     description:
@@ -115,7 +115,7 @@ export const blogs = [
     title: 'How to make new project usgin Tailwind and push it to github',
     tags: [
       { id: 2, tag: 'Tailwind', link: '/tailwind' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
       { id: 8, tag: 'github', link: '/github' },
     ],
     createdAt: '2021-2-10',
@@ -127,7 +127,7 @@ export const blogs = [
     title: 'how to calcuate the degree of ...',
     tags: [
       { id: 6, tag: 'math', link: '/math' },
-      { id: 3, tag: 'guid', link: '/guid' },
+      { id: 3, tag: 'guide', link: '/guide' },
     ],
     createdAt: '2020-1-10',
     description:
