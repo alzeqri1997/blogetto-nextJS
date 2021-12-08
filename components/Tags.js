@@ -5,7 +5,7 @@ import { Link as MuiLink } from '@mui/material'
 export default function Tags({ tag, link }) {
   return (
     <Box style={{ marginRight: '.5rem' }}>
-      <Link href={`/tag${link}`} passHref>
+      <Link href={`/tags${link}`} passHref>
         <MuiLink sx={{ fontWeight: 'light' }} underline="none">
           {tag.toUpperCase()}
         </MuiLink>

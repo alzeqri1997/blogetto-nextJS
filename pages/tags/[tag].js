@@ -33,7 +33,6 @@ export async function getStaticPaths() {
   const { tags } = await res.json()
 
   const paths = await tags.map((tag) => {
-    console.log(tag)
     return {
       params: {
         tag: tag.tag.toLowerCase(),
