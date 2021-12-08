@@ -1,12 +1,30 @@
 import { useColorMode, useCustomTheme } from './CustomTheme'
+import MenuTrigger from './MenuTrigger'
 
-import { AppBar, Container, Toolbar, Box, IconButton } from '@mui/material'
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Box,
+  IconButton,
+  useMediaQuery,
+} from '@mui/material'
 import Link from 'next/link'
 import Logo from './Logo'
 import { Dark, Light } from './Icons'
 
 export default function Header() {
   const colorMode = useColorMode()
+  const matches460 = useMediaQuery('(min-width:460px)')
+
+  const MenuItems = () => (
+    <>
+      <Link href="/blog">Blog</Link>
+      <Link href="/tags">Tags</Link>
+      <Link href="/projects">Projects</Link>
+      <Link href="/about">About</Link>
+    </>
+  )
 
   const { palette } = useCustomTheme()
   return (
@@ -25,13 +43,11 @@ export default function Header() {
               gap: 2,
             }}
           >
-            <Link href="/blog">Blog</Link>
-            <Link href="/tags">Tags</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/about">About</Link>
+            {matches460 && <MenuItems />}
             <IconButton onClick={colorMode.toggleColorMode}>
               {palette.mode === 'dark' ? <Light /> : <Dark />}
             </IconButton>
+            {!matches460 && <MenuTrigger />}
           </Box>
         </Toolbar>
       </Container>
